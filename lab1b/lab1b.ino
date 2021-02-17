@@ -43,7 +43,8 @@ void setup() {
   delay(1000);
   buzzer.play("c32");
   lcd.clear();
-  lcd.write("Starting...");
+  lcd.write("Lab 1b");
+  delay(2000);
 }
 
 /*
@@ -64,7 +65,6 @@ void loop() {
       }
     } else if (task == 1) {
       taskComplete = moveBackward(-sixInches);
-      Serial.println(taskComplete);
       if (taskComplete == true) {
         taskComplete = false;
         task = 2;
@@ -97,8 +97,7 @@ boolean onOffSwitch() {
 }
 
 boolean moveForeward(float distance) {
-    int wheelSpeed = 400;
-    
+    int wheelSpeed = 300;
     if(Sl < distance && Sr < distance) {
       
       if(Sl > (distance * .75)) {
@@ -129,13 +128,10 @@ boolean moveBackward(float distance) {
       
       if(Sl < (distance * .75)) {
          wheelSpeed = 100 * ((distance - Sr) / 10);
-         Serial.println("3/4");
          if (wheelSpeed < 30) wheelSpeed = -30;
       } else if (Sl < (distance * .50)) {
-        Serial.println("Midway");
          wheelSpeed = 200 * ((distance - Sr) / 10);
       } else if (Sl < (distance * .25)) {
-        Serial.println("Starting");
          wheelSpeed = 300 * ((distance - Sr) / 10);
       }
       
@@ -144,7 +140,6 @@ boolean moveBackward(float distance) {
       motors.setSpeeds(0, 0);  
       Sl = 0.0F;
       Sr = 0.0F;
-      Serial.println("only once");
       delay(2000);
       return true;
     }
