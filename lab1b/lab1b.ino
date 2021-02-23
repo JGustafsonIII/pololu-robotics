@@ -26,7 +26,7 @@ const float WHEEL_DIAMETER = 3.2;
 const float WHEEL_CIRCUMFERENCE = 10.0531;
 
 float foot = 30.5F;           // 1ft
-float sixInches = (foot / 2); // 6inch
+float eightteenInches = 45.72F; // 18inch
 float threeFeet = (foot * 3); // 3ft
 
 float Sl = 0.0F;
@@ -71,7 +71,7 @@ void loop()
     }
     else if (task == 1)
     {
-      taskComplete = moveBackward(-sixInches);
+      taskComplete = moveBackward(-foot);
       if (taskComplete == true)
       {
         taskComplete = false;
@@ -80,7 +80,7 @@ void loop()
     }
     else if (task == 2)
     {
-      taskComplete = moveForeward(threeFeet);
+      taskComplete = moveForeward(eightteenInches);
       if (taskComplete == true)
       {
         taskComplete = false;
