@@ -136,7 +136,7 @@ void finishedTask(int wait)
 */
 boolean moveForeward(float distance)
 {
-  int wheelSpeed = 300;
+  int wheelSpeed = 75;
   if (Sl < distance && Sr < distance)
   {
 
@@ -148,15 +148,15 @@ boolean moveForeward(float distance)
     }
     else if (Sl > (distance * .50))
     {
-      wheelSpeed = 100 * ((distance - Sr) / 10);
+      wheelSpeed = 75 * ((distance - Sr) / 10);
     }
     else if (Sl > (distance * .25))
     {
-      wheelSpeed = 200 * ((distance - Sr) / 10);
+      wheelSpeed = 100 * ((distance - Sr) / 10);
     }
     else if (Sl < (distance *.25))
     {
-      wheelSpeed = 100 * ((distance - Sr) / 10);
+      wheelSpeed = 75 * ((distance - Sr) / 10);
     }
 
     motors.setSpeeds(wheelSpeed, wheelSpeed);
@@ -176,7 +176,7 @@ boolean moveForeward(float distance)
 */
 boolean moveBackward(float distance)
 {
-  int wheelSpeed = -300;
+  int wheelSpeed = -75;
 
   if (Sl > distance && Sr > distance)
   {
@@ -188,15 +188,15 @@ boolean moveBackward(float distance)
     }
     else if (Sl < (distance * .50))
     {
-      wheelSpeed = 100 * ((distance - Sr) / 10);
+      wheelSpeed = 75 * ((distance - Sr) / 10);
     }
     else if (Sl < (distance * .25))
     {
-      wheelSpeed = 200 * ((distance - Sr) / 10);
+      wheelSpeed = 100 * ((distance - Sr) / 10);
     }
     else if (Sl > (distance *.25))
     {
-      wheelSpeed = 100 * ((distance - Sr) / 10);
+      wheelSpeed = 75 * ((distance - Sr) / 10);
     }
 
     motors.setSpeeds(wheelSpeed, wheelSpeed);
